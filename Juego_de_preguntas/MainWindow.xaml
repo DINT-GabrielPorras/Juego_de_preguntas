@@ -5,50 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Juego_de_preguntas"
         mc:Ignorable="d"
-        Title="Juego de preguntas" Height="450" Width="800">
+        Title="Juego de preguntas" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <Grid>
         <TabControl>
             <TabItem Header="Jugar">
                 
             </TabItem>
             <TabItem Header="Añadir pregunta">
-                <DockPanel LastChildFill="False">
-                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                        <TextBlock Text="Nivel de dificultad" Margin="10"/>
-                        <ComboBox Margin="0,0,150,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom">
+                        <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                            <TextBox Margin="10"/>
+                            <TextBox Margin="10"/>
+                            <TextBox Margin="10"/>
+                        </StackPanel>
+                        <Image  Source="/imagen.png" Stretch="UniformToFill" Margin="10"/>
+                    </DockPanel>
+
+                    <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10">Nivel de dificultad</TextBlock>
+
+                    <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="1" Margin="10">
+                        <ComboBox DockPanel.Dock="Left" Height="20" Width="85">
                             <ComboBoxItem Content="Fácil" IsSelected="True"/>
                             <ComboBoxItem Content="Media"/>
                             <ComboBoxItem Content="Difícil"/>
                         </ComboBox>
-                        <TextBlock Text="Categoria" Margin="10"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Ciencia" IsSelected="True"/>
-                            <ComboBoxItem Content="Arte"/>
-                            <ComboBoxItem Content="Historia"/>
-                            <ComboBoxItem Content="Filosofía"/>
-                        </ComboBox>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" Margin="10">Categoría</TextBlock>
+                            <ComboBox Height="20" Width="85" HorizontalAlignment="Center">
+                                <ComboBoxItem Content="Ciencia" IsSelected="True"/>
+                                <ComboBoxItem Content="Arte"/>
+                                <ComboBoxItem Content="Historia"/>
+                                <ComboBoxItem Content="Filosofía"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom">
+                        <TextBlock Margin="10">Pregunta</TextBlock>
+                        <TextBlock Margin="10">Respuesta</TextBlock>
+                        <TextBlock Margin="10">Imagen</TextBlock>
                     </StackPanel>
-                    <DockPanel LastChildFill="False" DockPanel.Dock="Right">
+
+                    <DockPanel LastChildFill="False" Grid.Column="2" Grid.Row="0">
                         <Button DockPanel.Dock="Top" Margin="10">Añadir pregunta</Button>
                         <Button DockPanel.Dock="Top" Margin="10">Limpiar formulario</Button>
                         <Button DockPanel.Dock="Bottom" Margin="10">Examinar</Button>
                     </DockPanel>
-                    <StackPanel DockPanel.Dock="Bottom">
-                        <DockPanel LastChildFill="False">
-                            <TextBlock DockPanel.Dock="Left" Text="Pregunta"/>
-                            <TextBox DockPanel.Dock="Right" Width="500"/>
-                        </DockPanel>
-                        <DockPanel LastChildFill="False">
-                            <TextBlock DockPanel.Dock="Left" Text="Respuesta"/>
-                            <TextBox DockPanel.Dock="Right" Width="500"/>
-                        </DockPanel>
-                        <DockPanel LastChildFill="False">
-                            <TextBlock DockPanel.Dock="Left" Text="Imagen"/>
-                            <TextBox DockPanel.Dock="Right" Width="500"/>
-                        </DockPanel>
-                    </StackPanel>
-                    <Image Width="500" Margin="10" Source="/imagen.png" Stretch="UniformToFill"/>
-                </DockPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="Gestionar preguntas">
                 
