@@ -9,8 +9,49 @@
     <Grid>
         <TabControl>
             <TabItem Header="Jugar">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+
+                        <TextBlock Margin="10">Categoría</TextBlock>
+                        <Image Source="/imagen.png" Margin="5"/>
+                        <TextBlock Margin="5">¿Texto de la pregunta?</TextBlock>
+                        <TextBlock Margin="5">Respuesta</TextBlock>
+                        <DockPanel LastChildFill="True" Margin="5">
+                            <Button DockPanel.Dock="Right">Validar</Button>
+                            <TextBox/>
+                        </DockPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+
+                            <TextBlock>Ver pista/Ocultar pista</TextBlock>
+                        </StackPanel>
+                        <TextBlock Text=""/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <GroupBox Header="Categorías conseguidas">
+                            <UniformGrid>
+                                <TextBlock Text="Ciencia"/>
+                                <TextBlock Text="Arte"/>
+                                <TextBlock Text="Historia"/>
+                                <TextBlock Text="Filosofía"/>
+                            </UniformGrid>
+                        </GroupBox>
+                        <DockPanel LastChildFill="True">
+                            <Button DockPanel.Dock="Right" Margin="10">Nueva partida</Button>
+                            <StackPanel>
+                                <TextBlock>Dificultad</TextBlock>
+                                <Slider/>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </Grid>
             </TabItem>
+            
             <TabItem Header="Añadir pregunta">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -65,6 +106,7 @@
                     </DockPanel>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="Gestionar preguntas">
                 
             </TabItem>
