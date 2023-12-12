@@ -1,0 +1,58 @@
+﻿<Window x:Class="Juego_de_preguntas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Juego_de_preguntas"
+        mc:Ignorable="d"
+        Title="Juego de preguntas" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Jugar">
+                
+            </TabItem>
+            <TabItem Header="Añadir pregunta">
+                <DockPanel LastChildFill="False">
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                        <TextBlock Text="Nivel de dificultad" Margin="10"/>
+                        <ComboBox Margin="0,0,150,0">
+                            <ComboBoxItem Content="Fácil" IsSelected="True"/>
+                            <ComboBoxItem Content="Media"/>
+                            <ComboBoxItem Content="Difícil"/>
+                        </ComboBox>
+                        <TextBlock Text="Categoria" Margin="10"/>
+                        <ComboBox>
+                            <ComboBoxItem Content="Ciencia" IsSelected="True"/>
+                            <ComboBoxItem Content="Arte"/>
+                            <ComboBoxItem Content="Historia"/>
+                            <ComboBoxItem Content="Filosofía"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <DockPanel LastChildFill="False" DockPanel.Dock="Right">
+                        <Button DockPanel.Dock="Top" Margin="10">Añadir pregunta</Button>
+                        <Button DockPanel.Dock="Top" Margin="10">Limpiar formulario</Button>
+                        <Button DockPanel.Dock="Bottom" Margin="10">Examinar</Button>
+                    </DockPanel>
+                    <StackPanel DockPanel.Dock="Bottom">
+                        <DockPanel LastChildFill="False">
+                            <TextBlock DockPanel.Dock="Left" Text="Pregunta"/>
+                            <TextBox DockPanel.Dock="Right" Width="500"/>
+                        </DockPanel>
+                        <DockPanel LastChildFill="False">
+                            <TextBlock DockPanel.Dock="Left" Text="Respuesta"/>
+                            <TextBox DockPanel.Dock="Right" Width="500"/>
+                        </DockPanel>
+                        <DockPanel LastChildFill="False">
+                            <TextBlock DockPanel.Dock="Left" Text="Imagen"/>
+                            <TextBox DockPanel.Dock="Right" Width="500"/>
+                        </DockPanel>
+                    </StackPanel>
+                    <Image Width="500" Margin="10" Source="/imagen.png" Stretch="UniformToFill"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Gestionar preguntas">
+                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
