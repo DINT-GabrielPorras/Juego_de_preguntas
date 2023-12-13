@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Juego de preguntas" Height="550" Width="900" MinHeight="550" MinWidth="900">
     <Grid>
-        <TabControl>
+        <TabControl Margin="10">
             <TabItem Header="Jugar">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -27,9 +27,8 @@
                             <Button DockPanel.Dock="Right" Margin="5,0,0,0">Validar</Button>
                             <TextBox/>
                         </DockPanel>
-
                         <Expander Header="Ver pista/Ocultar pista" Margin="5">
-                            <TextBlock TextWrapping="Wrap" Text="Respuesta" Margin="15"/>
+                            <TextBlock TextWrapping="Wrap" Text="Respuesta" Margin="10"/>
                         </Expander>
                     </StackPanel>
 
@@ -128,25 +127,63 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    
-                    <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Source="/imagen.png" Stretch="UniformToFill" Margin="10"/>
-                    
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="10">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <WrapPanel >
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                                <StackPanel Margin="25">
+                                    <Image Source="/imagen.png" Width="50" Height="50" Margin="0,0,0,2"/>
+                                    <TextBlock Text="TextoPregunta"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </ScrollViewer>
+                    </Border>                                      
 
-
-                    <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom">
+                    <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom">
                         <TextBox Margin="10"/>
                         <TextBox Margin="10"/>
                         <TextBox Margin="10"/>
                     </StackPanel>
 
+                    <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Margin="10">Nivel de dificultad</TextBlock>
 
-                    <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10">Nivel de dificultad</TextBlock>
-
-                    <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="1" Margin="10">
+                    <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="2" Margin="10">
                         <ComboBox DockPanel.Dock="Left" Height="20" Width="85">
                             <ComboBoxItem Content="Fácil" IsSelected="True"/>
                             <ComboBoxItem Content="Media"/>
@@ -164,7 +201,7 @@
                         </StackPanel>
                     </DockPanel>
 
-                    <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom">
+                    <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom">
                         <TextBlock Margin="10">Pregunta</TextBlock>
                         <TextBlock Margin="10">Respuesta</TextBlock>
                         <TextBlock Margin="10">Imagen</TextBlock>
@@ -174,6 +211,9 @@
                         <Button DockPanel.Dock="Top" Margin="10">Cargar de JSON</Button>
                         <Button DockPanel.Dock="Top" Margin="10">Guardar en JASON</Button>
                         <Button DockPanel.Dock="Top" Margin="10">Eliminar pregunta</Button>
+                        
+                    </DockPanel>
+                    <DockPanel LastChildFill="False" Grid.Column="2" Grid.Row="1">
                         <Button DockPanel.Dock="Bottom" Margin="10">Examinar</Button>
                     </DockPanel>
                 </Grid>
