@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Juego_de_preguntas"
         mc:Ignorable="d"
-        Title="Juego de preguntas" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="Juego de preguntas" Height="550" Width="900" MinHeight="550" MinWidth="900">
     <Grid>
         <TabControl>
             <TabItem Header="Jugar">
@@ -16,36 +16,49 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0" HorizontalAlignment="Left">
-
-                        <TextBlock Margin="10">Categoría</TextBlock>
+                        <StackPanel HorizontalAlignment="Left">
+                            <TextBlock Margin="10">Categoría</TextBlock>
+                            <Image Source="/iconoCiencia.png" Width="32" Height="32"/>
+                        </StackPanel>
                         <Image Source="/imagen.png" Margin="5"/>
                         <TextBlock Margin="5">¿Texto de la pregunta?</TextBlock>
                         <TextBlock Margin="5">Respuesta</TextBlock>
                         <DockPanel LastChildFill="True" Margin="5">
-                            <Button DockPanel.Dock="Right">Validar</Button>
+                            <Button DockPanel.Dock="Right" Margin="5,0,0,0">Validar</Button>
                             <TextBox/>
                         </DockPanel>
-                        <StackPanel Orientation="Horizontal" Margin="5">
 
-                            <TextBlock>Ver pista/Ocultar pista</TextBlock>
-                        </StackPanel>
-                        <TextBlock Text=""/>
+                        <Expander Header="Ver pista/Ocultar pista" Margin="5">
+                            <TextBlock TextWrapping="Wrap" Text="Respuesta" Margin="15"/>
+                        </Expander>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1">
-                        <GroupBox Header="Categorías conseguidas">
-                            <UniformGrid>
-                                <TextBlock Text="Ciencia"/>
-                                <TextBlock Text="Arte"/>
-                                <TextBlock Text="Historia"/>
-                                <TextBlock Text="Filosofía"/>
+                    <StackPanel Grid.Column="1" Margin="10">
+                        <GroupBox Header="Categorías conseguidas" Height="200" Margin="0,0,0,25">
+                            <UniformGrid Margin="20">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/iconoCiencia.png" Width="32" Height="32"/>
+                                    <TextBlock Text="Ciencia"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/iconoArte.png" Width="32" Height="32"/>
+                                    <TextBlock Text="Arte"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/iconoHistoria.png" Width="32" Height="32"/>
+                                    <TextBlock Text="Historia"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Image Source="/iconoFilosofia.png" Width="32" Height="32"/>
+                                    <TextBlock Text="Filosofía"/>
+                                </StackPanel>
                             </UniformGrid>
                         </GroupBox>
                         <DockPanel LastChildFill="True">
                             <Button DockPanel.Dock="Right" Margin="10">Nueva partida</Button>
                             <StackPanel>
-                                <TextBlock>Dificultad</TextBlock>
-                                <Slider/>
+                                <TextBlock Margin="0,0,0,5">Dificultad</TextBlock>
+                                <Slider Minimum="1" Maximum="3" TickPlacement="BottomRight" IsSnapToTickEnabled="True"/>
                             </StackPanel>
                         </DockPanel>
                     </StackPanel>
@@ -108,7 +121,62 @@
             </TabItem>
             
             <TabItem Header="Gestionar preguntas">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    
+                    <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Source="/imagen.png" Stretch="UniformToFill" Margin="10"/>
+                    
+
+
+                    <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom">
+                        <TextBox Margin="10"/>
+                        <TextBox Margin="10"/>
+                        <TextBox Margin="10"/>
+                    </StackPanel>
+
+
+                    <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10">Nivel de dificultad</TextBlock>
+
+                    <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="1" Margin="10">
+                        <ComboBox DockPanel.Dock="Left" Height="20" Width="85">
+                            <ComboBoxItem Content="Fácil" IsSelected="True"/>
+                            <ComboBoxItem Content="Media"/>
+                            <ComboBoxItem Content="Difícil"/>
+                        </ComboBox>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" Margin="10">Categoría</TextBlock>
+                            <ComboBox Height="20" Width="85" HorizontalAlignment="Center">
+                                <ComboBoxItem Content="Ciencia" IsSelected="True"/>
+                                <ComboBoxItem Content="Arte"/>
+                                <ComboBoxItem Content="Historia"/>
+                                <ComboBoxItem Content="Filosofía"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom">
+                        <TextBlock Margin="10">Pregunta</TextBlock>
+                        <TextBlock Margin="10">Respuesta</TextBlock>
+                        <TextBlock Margin="10">Imagen</TextBlock>
+                    </StackPanel>
+
+                    <DockPanel LastChildFill="False" Grid.Column="2" Grid.Row="0">
+                        <Button DockPanel.Dock="Top" Margin="10">Cargar de JSON</Button>
+                        <Button DockPanel.Dock="Top" Margin="10">Guardar en JASON</Button>
+                        <Button DockPanel.Dock="Top" Margin="10">Eliminar pregunta</Button>
+                        <Button DockPanel.Dock="Bottom" Margin="10">Examinar</Button>
+                    </DockPanel>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>

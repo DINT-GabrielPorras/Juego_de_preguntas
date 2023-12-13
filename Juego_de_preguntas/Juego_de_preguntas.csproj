@@ -8,14 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="iconoArte.png" />
     <None Remove="iconoBoton.png" />
     <None Remove="iconoCiencia.png" />
+    <None Remove="iconoFilosofia.png" />
+    <None Remove="iconoFlecha.png" />
+    <None Remove="iconoHistoria.png" />
     <None Remove="imagen.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="iconoBoton.png" />
+    <Resource Include="iconoArte.png" />
     <Resource Include="iconoCiencia.png" />
+    <Resource Include="iconoFilosofia.png" />
+    <Resource Include="iconoHistoria.png" />
     <Resource Include="imagen.png" />
   </ItemGroup>
 
