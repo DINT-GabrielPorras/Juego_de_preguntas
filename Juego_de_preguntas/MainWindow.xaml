@@ -17,8 +17,7 @@
 
                     <StackPanel Grid.Column="0" HorizontalAlignment="Left">
                         <StackPanel HorizontalAlignment="Left">
-                            <TextBlock Margin="10">Categoría</TextBlock>
-                            <Image Source="/iconoCiencia.png" Width="32" Height="32"/>
+                            <Image Source="/iconoCiencia.png" Width="42" Height="42"/>
                         </StackPanel>
                         <Image Source="/imagen.png" Margin="5"/>
                         <TextBlock Margin="5">¿Texto de la pregunta?</TextBlock>
@@ -35,22 +34,10 @@
                     <StackPanel Grid.Column="1" Margin="10">
                         <GroupBox Header="Categorías conseguidas" Height="200" Margin="0,0,0,25">
                             <UniformGrid Margin="20">
-                                <StackPanel HorizontalAlignment="Center">
-                                    <Image Source="/iconoCiencia.png" Width="32" Height="32"/>
-                                    <TextBlock Text="Ciencia"/>
-                                </StackPanel>
-                                <StackPanel HorizontalAlignment="Center">
-                                    <Image Source="/iconoArte.png" Width="32" Height="32"/>
-                                    <TextBlock Text="Arte"/>
-                                </StackPanel>
-                                <StackPanel HorizontalAlignment="Center">
-                                    <Image Source="/iconoHistoria.png" Width="32" Height="32"/>
-                                    <TextBlock Text="Historia"/>
-                                </StackPanel>
-                                <StackPanel HorizontalAlignment="Center">
-                                    <Image Source="/iconoFilosofia.png" Width="32" Height="32"/>
-                                    <TextBlock Text="Filosofía"/>
-                                </StackPanel>
+                                <Image Source="/iconoCiencia.png" Width="42" Height="42"/>
+                                <Image Source="/iconoArte.png" Width="42" Height="42"/>
+                                <Image Source="/iconoHistoria.png" Width="42" Height="42"/>
+                                <Image Source="/iconoFilosofia.png" Width="42" Height="42"/>
                             </UniformGrid>
                         </GroupBox>
                         <DockPanel LastChildFill="True">
