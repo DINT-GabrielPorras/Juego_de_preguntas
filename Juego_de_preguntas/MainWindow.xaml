@@ -65,9 +65,9 @@
 
                     <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom">
                         <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
-                            <TextBox Margin="10"/>
-                            <TextBox Margin="10"/>
-                            <TextBox Margin="10"/>
+                            <TextBox Margin="10" TextChanged="Pregunta_TextChanged"/>
+                            <TextBox Margin="10" TextChanged="Respuesta_TextChanged"/>
+                            <TextBox Margin="10" TextChanged="Imagen_TextChanged"/>
                         </StackPanel>
                         <Image  Source="/imagen.png" Stretch="UniformToFill" Margin="10"/>
                     </DockPanel>
@@ -75,7 +75,7 @@
                     <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Margin="10">Nivel de dificultad</TextBlock>
 
                     <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="1" Margin="10">
-                        <ComboBox DockPanel.Dock="Left" Height="20" Width="85">
+                        <ComboBox DockPanel.Dock="Left" Height="20" Width="85" SelectionChanged="Dificultad_SelectionChanged">
                             <ComboBoxItem Content="Fácil" IsSelected="True"/>
                             <ComboBoxItem Content="Media"/>
                             <ComboBoxItem Content="Difícil"/>
@@ -83,7 +83,7 @@
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock VerticalAlignment="Center" Margin="10">Categoría</TextBlock>
-                            <ComboBox Height="20" Width="85" HorizontalAlignment="Center">
+                            <ComboBox Height="20" Width="85" HorizontalAlignment="Center" SelectionChanged="Categoria_SelectionChanged">
                                 <ComboBoxItem Content="Ciencia" IsSelected="True"/>
                                 <ComboBoxItem Content="Arte"/>
                                 <ComboBoxItem Content="Historia"/>
@@ -99,8 +99,8 @@
                     </StackPanel>
 
                     <DockPanel LastChildFill="False" Grid.Column="2" Grid.Row="0">
-                        <Button DockPanel.Dock="Top" Margin="10">Añadir pregunta</Button>
-                        <Button DockPanel.Dock="Top" Margin="10">Limpiar formulario</Button>
+                        <Button DockPanel.Dock="Top" Margin="10" Click="Button_Click">Añadir pregunta</Button>
+                        <Button DockPanel.Dock="Top" Margin="10" Click="Button_Click">Limpiar formulario</Button>
                         <Button DockPanel.Dock="Bottom" Margin="10">Examinar</Button>
                     </DockPanel>
                 </Grid>
@@ -196,7 +196,7 @@
 
                     <DockPanel LastChildFill="False" Grid.Column="2" Grid.Row="0">
                         <Button DockPanel.Dock="Top" Margin="10">Cargar de JSON</Button>
-                        <Button DockPanel.Dock="Top" Margin="10">Guardar en JASON</Button>
+                        <Button DockPanel.Dock="Top" Margin="10">Guardar en JSON</Button>
                         <Button DockPanel.Dock="Top" Margin="10">Eliminar pregunta</Button>
                         
                     </DockPanel>

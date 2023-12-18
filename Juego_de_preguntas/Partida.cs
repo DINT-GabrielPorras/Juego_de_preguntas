@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Juego_de_preguntas
 {
-    internal class Partida
+    internal class Partida : ObservableObject
     {
         private List<Pregunta> listaPreguntas;
         public List<Pregunta> ListaPreguntas
@@ -27,16 +28,6 @@ namespace Juego_de_preguntas
         {
             this.listaPreguntas = listaPreguntas;
             this.dificultad = dificultad;
-        }
-
-        private void SetProperty(ref string dificultad, string value)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void SetProperty(ref List<Pregunta> listaPreguntas, List<Pregunta> value)
-        {
-            throw new NotImplementedException();
         }
     }
 }

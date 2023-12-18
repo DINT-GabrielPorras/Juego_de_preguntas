@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,61 +9,41 @@ using System.Threading.Tasks;
 namespace Juego_de_preguntas
 {
 
-    internal class Pregunta : INotifyPropertyChanged
+    internal class Pregunta : ObservableObject
     {
         private string textoPregunta;
         public string TextoPregunta
         {
             get => textoPregunta;
-            set
-            {
-                textoPregunta = value;
-                NotifyPropertyChanged("Pregunta");
-            }
+            set { SetProperty(ref textoPregunta, value); }
         }
 
         private string respuesta;
         public string Respuesta
         {
             get => respuesta;
-            set
-            {
-                respuesta = value;
-                NotifyPropertyChanged("Respuesta");
-            }
+            set { SetProperty(ref respuesta, value); }
         }
 
         private string imagen;
         public string Imagen
         {
             get => imagen;
-            set
-            {
-                imagen = value;
-                NotifyPropertyChanged("Imagen");
-            }
+            set { SetProperty(ref imagen, value); }
         }
 
         private string dificultad;
         public string Dificultad
         {
             get => dificultad;
-            set
-            {
-                dificultad = value;
-                NotifyPropertyChanged("Dificultad");
-            }
+            set { SetProperty(ref dificultad, value); }
         }
 
         private string categoria;
         public string Categoria
         {
             get => categoria;
-            set
-            {
-                categoria = value;
-                NotifyPropertyChanged("Categoria");
-            }
+            set { SetProperty(ref categoria, value); }
         }
 
         public Pregunta(string textoPregunta, string respuesta, string imagen, string dificultad, string categoria)
@@ -75,12 +56,5 @@ namespace Juego_de_preguntas
         }
 
         public Pregunta() { }
-
-        private void NotifyPropertyChanged(string v)
-        {
-            throw new NotImplementedException();
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
