@@ -67,5 +67,14 @@ namespace Juego_de_preguntas
             if (openFileDialog.ShowDialog() == true)
                 imagenTextBox.Text = openFileDialog.FileName; 
         }
+
+        private void AbrirExploradorModificar_Click(object sender, RoutedEventArgs e)
+        {
+            imagenTextBox.IsEnabled = true;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                rutaImagenACambiar.Text = openFileDialog.FileName;
+        }
     }
 }

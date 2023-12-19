@@ -47,10 +47,10 @@
                     <StackPanel Grid.Column="1" Margin="10">
                         <GroupBox Header="Categorías conseguidas" Height="200" Margin="0,0,0,25">
                             <UniformGrid Margin="20">
-                                <Image Source="/iconoCiencia.png" Width="42" Height="42"/>
-                                <Image Source="/iconoArte.png" Width="42" Height="42"/>
-                                <Image Source="/iconoHistoria.png" Width="42" Height="42"/>
-                                <Image Source="/iconoFilosofia.png" Width="42" Height="42"/>
+                                <Image Source="/iconoCiencia.png" Width="42" Height="42" Opacity="1"/>
+                                <Image Source="/iconoArte.png" Width="42" Height="42" Opacity="1"/>
+                                <Image Source="/iconoHistoria.png" Width="42" Height="42" Opacity="1"/>
+                                <Image Source="/iconoFilosofia.png" Width="42" Height="42" Opacity="1"/>
                             </UniformGrid>
                         </GroupBox>
                         <DockPanel LastChildFill="True">
@@ -150,9 +150,12 @@
                     </ListBox>
 
                     <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom">
-                        <TextBox Margin="10"/>
-                        <TextBox Margin="10"/>
-                        <TextBox Margin="10"/>
+                        <TextBox x:Name="textoPreguntaACambiar"
+                                 Text="{Binding ElementName=preguntasListBox, Path=SelectedItem.TextoPregunta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+                        <TextBox x:Name="respuestaACambiar"
+                                 Text="{Binding ElementName=preguntasListBox, Path=SelectedItem.Respuesta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+                        <TextBox x:Name="rutaImagenACambiar"
+                                 Text="{Binding ElementName=preguntasListBox, Path=SelectedItem.Imagen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
                     </StackPanel>
 
                     <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Margin="10">Nivel de dificultad</TextBlock>
@@ -188,7 +191,7 @@
                         
                     </DockPanel>
                     <DockPanel LastChildFill="False" Grid.Column="2" Grid.Row="1">
-                        <Button DockPanel.Dock="Bottom" Margin="10">Examinar</Button>
+                        <Button DockPanel.Dock="Bottom" Margin="10" Click="AbrirExploradorModificar_Click">Examinar</Button>
                     </DockPanel>
                 </Grid>
             </TabItem>
