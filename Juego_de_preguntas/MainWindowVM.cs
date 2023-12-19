@@ -5,8 +5,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Juego_de_preguntas
 {
@@ -32,44 +35,11 @@ namespace Juego_de_preguntas
             Pregunta = null;
         }
 
-        public void AñadirTextoPregunta()
+        public void AñadirPregunta(string textoPregunta, string respuesta, string imagen, string dificultad, string categoria)
         {
-
-        }
-
-        public void AñadirTextoRespuesta()
-        {
-
-        }
-
-        public void AñadirImagen()
-        {
-
-        }
-
-        public void Examinar()
-        {
-
-        }
-
-        public void AñadirDificultad()
-        {
-
-        }
-
-        public void AñadirCategoria()
-        {
-
-        }
-
-        public void AñadirPregunta()
-        {
-
-        }
-
-        public void LimpiarFormulario()
-        {
-
-        }
+            pregunta = new Pregunta(textoPregunta, respuesta, imagen, dificultad, categoria);
+            ListaPreguntas.Add(pregunta);
+            MessageBox.Show("Se ha añadido la pregunta correctamente");
+        } 
     }
 }

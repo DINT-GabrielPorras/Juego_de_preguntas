@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,12 @@ namespace Juego_de_preguntas
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string textoPregunta;
+        private string textRespuesta;
+        private string rutaImagen;
+        private string dificultad;
+        private string categoria;
+
         private MainWindowVM vm;
         public MainWindow()
         {
@@ -28,44 +36,36 @@ namespace Juego_de_preguntas
             this.DataContext = vm;
         }
 
-        private void Pregunta_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            vm.AñadirTextoPregunta();
-        }
-
-        private void Respuesta_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            vm.AñadirTextoRespuesta();
-        }
-
-        private void Imagen_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            vm.AñadirImagen();
-        }
-
-        private void Dificultad_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            vm.AñadirDificultad();
-        }
-
-        private void Categoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            vm.AñadirCategoria();
-        }
-
         private void AñadirPregunta_Click(object sender, RoutedEventArgs e)
         {
-            vm.AñadirPregunta();
-        }
+            textoPregunta = preguntaTextBox.Text;
+            textRespuesta = respuestaTextBox.Text;
+            rutaImagen = imagenTextBox.Text;
+            dificultad = dificultadComboBox.Text;
+            categoria = categoriaComboBox.Text;
 
-        private void Examinar_Click(object sender, RoutedEventArgs e)
-        {
-            vm.Examinar();
+            vm.AñadirPregunta(textoPregunta, textRespuesta, rutaImagen, dificultad, categoria);
         }
 
         private void LimpiarFormulario_Click(object sender, RoutedEventArgs e)
         {
-            vm.LimpiarFormulario();
+            preguntaTextBox.Text = "";
+            respuestaTextBox.Text = "";
+            imagenTextBox.Text = "";
+            dificultadComboBox.Text = "Fácil";
+            categoriaComboBox.Text = "Ciencia";
+
+            imagenTextBox.IsEnabled = false;
+            imagenPregunta.Source = null;
+        }
+
+        private void AbrirExplorador_Click(object sender, RoutedEventArgs e)
+        {
+            imagenTextBox.IsEnabled = true;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                imagenTextBox.Text = openFileDialog.FileName; 
         }
     }
 }
